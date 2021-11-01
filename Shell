@@ -1,0 +1,11 @@
+#! /bin/bash
+
+IFS=$'\n' #separate lines by using escape sequence '\n'
+
+count=0 #number of lines counter #the file's full path op
+
+file="/uploads/TMA.txt"
+
+array=($( cat $file )) #cat file contents to the array
+
+cat -n < <(printf "%s\n" "${array[@]}")
